@@ -2,7 +2,7 @@ function Pipe(){
 	this.top = random(height/2);
 	this.bottom = random(height/2);	
 	this.x = width; 
-	this.w = 20;
+	this.w = 30;
 	this.speed = 3;
 
 	this.show = function(){

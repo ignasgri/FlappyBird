@@ -11,6 +11,9 @@ function draw() {
 	bird.update();
 	bird.show();
 
+	if (frameCount % 100 == 0) {
+		pipes.push(new Pipe());
+	}
 	for (var i = 0; i < pipes.length; i++){
 		pipes[i].show();
 		pipes[i].update();
