@@ -5,6 +5,16 @@ function Pipe(){
 	this.w = 30;
 	this.speed = 3;
 
+	this.hits = function(bird) {
+		if (bird.y < this.top || bird.y > height - this.bottom){
+			if (bird.x > this.x && bird.x < this.x + this.w){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+
 	this.show = function(){
 		fill(255); 
 		rect(this.x, 0, this.w, this.top);
@@ -13,5 +23,14 @@ function Pipe(){
 	}
 	this.update = function(){
 		this.x -=this.speed;
+	}
+	this.offscreen = function(){
+		if (this.x < -this.w){
+			return this.x < -this.w;
+		//Or can use code down bellow insted of line 19
+		// 	return true;
+		// } else{
+		// 	return false;
+		}
 	}
 }
